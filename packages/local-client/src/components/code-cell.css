@@ -1,0 +1,75 @@
+.resize-vertical {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+}
+
+.handle-vertical {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+  height: 12px;
+  cursor: row-resize;
+  background-color: #202124;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 100%;
+  position: relative;
+  margin-bottom: -5px;
+}
+
+.resize-horizontal {
+  height: 100%;
+}
+
+.handle-horizontal {
+  width: 17px !important;
+  min-width: 17px;
+  margin-right: 2.5px;
+  height: 100%;
+  cursor: col-resize;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.progress {
+  color: #71B48D;
+}
+
+.progress.is-primary:indeterminate {
+  background-image: linear-gradient(to right,#71B48D 30%,#202124 30%);
+}
+
+.progress:indeterminate {
+  background-color: #202124;
+}
+
+.progress-wrapper {
+  height: 100%;
+  flex-grow: 1;
+  background-color: white;
+}
+
+.progress-cover {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+  
+}

@@ -1,0 +1,52 @@
+.cell-list {
+  margin: 0 0px 50vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+.react-draggable-transparent-selection .cell-list {
+  margin-bottom: 100vh;
+
+}
+
+.cell-list-item .action-bar-wrapper {
+  position: absolute;
+  top: 0px !important;
+  height: 30px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  transition: top 0.3s;
+  display: flex;
+  justify-content: center;
+}
+
+.cell-list-item:hover .action-bar-wrapper {
+  top: -40px !important;
+}
+
+.cell-list-item {
+  border: 1px solid rgba(250, 249, 246, 0);
+  transition: border 0.3s ease-in 0.1s !important;
+}
+
+.cell-list-item:hover {
+  border: 1px solid rgba(250, 249, 246, 1);
+  opacity: 1;
+}
+
+.cell-list-item:focus {
+  border: 1px solid rgba(250, 249, 246, 1) !important;
+  opacity: 1;
+}
+
+
+
+.button {
+  border-radius: 0 !important;
+  border: 1px solid rgba(250, 249, 246, 1) !important;
+}

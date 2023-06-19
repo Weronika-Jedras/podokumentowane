@@ -1,0 +1,14 @@
+.action-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 1;
+}
+
+
+.button {
+  background-color: #71B48D !important;
+}
+
+
+
