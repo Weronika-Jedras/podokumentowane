@@ -15,12 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.shareCommand = void 0;
 const path_1 = __importDefault(require("path"));
 const commander_1 = require("commander");
-// import { filename } from '.\serve.ts';
 const dropbox_1 = require("dropbox");
 const stream_1 = require("stream");
 const fs_1 = __importDefault(require("fs"));
 const isProduction = process.env.NODE_ENV === 'production';
-const accessToken = 'sl.BgvXGVhRXUFVh2jTyITnmgEkQu09MPAE1mdwUTR-G_XUQuA2Hx9TRUYipEXw2pqpLBYj6qp8YzRA7q9uDwbOk2Kk7VBUtHGMl747EtOwb22lus9IZkBviWX_iWd8sLUs85XUvik';
+const accessToken = 'sl.Bgx2rYj8wc1HOf9mDbSmhrKt2IXmevSFzStOihg8c6LBh2tOCKpVuHMftZToQMb61v74STcKl9Q6Uow8rvKsW5ED5rPXD2ZpDQQavus2UzU3AnPm-gSOybMsln1CzxLtDR5s66U';
 const dbx = new dropbox_1.Dropbox({ accessToken });
 function uploadFile(filePath, destinationPath) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -44,12 +43,12 @@ function uploadFile(filePath, destinationPath) {
 }
 exports.shareCommand = new commander_1.Command()
     .command('share <filename>')
-    .description('whatever')
-    .action((filename = 'notebook.js') => __awaiter(void 0, void 0, void 0, function* () {
+    .description('Sharing to user\'s Dropbox')
+    .action((filename) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
-        yield uploadFile(filename, '/Aplikacje/podokumentowane');
-        console.log(`sharing ${filename}.`);
+        yield uploadFile(filename, '/' + filename);
+        console.log(`Shared ${filename} to Dropbox.`);
     }
     catch (err) {
         // if (isLocalApiError(err)) {
@@ -65,7 +64,7 @@ exports.shareCommand = new commander_1.Command()
         };
         if (hasErrCode(err)) {
             if (err.code === "EADDRINUSE") {
-                console.log("error.");
+                console.log("Error.");
             }
         }
         else if (err instanceof Error) {
